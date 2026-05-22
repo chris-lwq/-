@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>装车指导 APP 副本</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    html, body {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    #root {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      height: 100%;
+      min-height: 100vh;
+      overflow: visible;
+    }
+    
+    .back-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 99999;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      text-decoration: none;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      transition: background 0.2s;
+    }
+    .back-link:hover {
+      background: rgba(0,0,0,0.8);
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script>
+    (function() {
+      window.__AXHUB_EXPORTED_COMPONENT__ = null;
+      window.__AXHUB_DEFINE_COMPONENT__ = function(component) {
+        window.__AXHUB_EXPORTED_COMPONENT__ = component;
+        window.UserComponent = component;
+      };
+    })();
+  </script>
+  <script src="prototypes/loading-guidance-app-copy.js"></script>
+  <script>
+    (function() {
+      var root = document.getElementById('root');
+      var registered = window.__AXHUB_EXPORTED_COMPONENT__ || window.UserComponent;
+      if (!registered) {
+        root.innerHTML = '<div style="padding:40px;text-align:center;color:#999;font-family:sans-serif;">' +
+          '<h2>组件加载失败</h2><p>请确保构建产物正确</p></div>';
+        return;
+      }
+      var Component = registered.Component || registered.default || registered;
+      var reactRoot = ReactDOM.createRoot(root);
+      reactRoot.render(React.createElement(Component, {
+        container: root,
+        config: {},
+        data: {},
+        events: {}
+      }));
+    })();
+  </script>
+</body>
+</html>
